@@ -15,7 +15,7 @@ class Carre : public Rectangle {
 		inline double getCote() const { return _cote; };
 		inline void setCote(const double &c) { _cote = c; };
 
-		std::string quiSuisJe() const;
+		void quiSuisJe() const;
 };
 
 #endif

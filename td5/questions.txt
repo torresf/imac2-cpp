@@ -1,0 +1,12 @@
+1. class Fille : public Mere
+
+2. protected : Seules les classes filles ont accès à la méthode.
+
+3. ?
+
+4. virtual : Défini une méthode virtuelle
+
+5. Une méthode virtuelle pure est une méthode qui n'a pas d'implémentations dans la classe mère mais seulement dans les classes filles.
+
+6. Une classe est abstraite si elle possède une méthode virtuelle pure OU que des virtuelles pures ?
+

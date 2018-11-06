@@ -15,6 +15,6 @@ Carre::~Carre()
 	std::cout << "Destruction d'un Carré" << std::endl;
 }
 
-std::string Carre::quiSuisJe() const {
-	return "Je suis un carré";
+void Carre::quiSuisJe() const {
+	std::cout << "Je suis un Carre" << std::endl;
 }

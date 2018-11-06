@@ -14,6 +14,6 @@ Rectangle::~Rectangle()
 	std::cout << "Destruction d'un Rectangle" << std::endl;
 }
 
-std::string Rectangle::quiSuisJe() const {
-	return "Je suis un rectangle";
+void Rectangle::quiSuisJe() const {
+	std::cout << "Je suis un Rectangle" << std::endl;
 }

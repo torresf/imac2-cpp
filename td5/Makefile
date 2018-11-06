@@ -1,33 +1,29 @@
-EXE = td4_output
+EXE = image
 LDFLAGS = 
 CFLAGS  = -Wall -std=c++11
 all: ${EXE}
 
-${EXE}: main.o Figure.o Rectangle.o Carre.o Ellipse.o Cercle.o
+${EXE}: main.o ImageRGBu8.o ioPPM.o Filter.o Threshold.o
 	@echo linking ${EXE} 
 	@g++ ${LDFLAGS} -o ${EXE} $^
 
-main.o: main.cpp Figure.hpp Rectangle.hpp Carre.hpp Ellipse.hpp Cercle.hpp 
+main.o: main.cpp ImageRGBu8.hpp ioPPM.hpp
 	@echo compiling $@ 
 	@g++ ${CFLAGS} -c $< -o $@
 
-Figure.o: Figure.cpp Figure.hpp
+ImageRGBu8.o: ImageRGBu8.cpp ImageRGBu8.hpp
 	@echo compiling $@ 
 	@g++ ${CFLAGS} -c $< -o $@
 
-Carre.o: Carre.cpp Carre.hpp Rectangle.hpp
+Filter.o: Filter.cpp Filter.hpp
 	@echo compiling $@ 
 	@g++ ${CFLAGS} -c $< -o $@
 
-Rectangle.o: Rectangle.cpp Rectangle.hpp
+Threshold.o: Threshold.cpp Threshold.hpp Filter.hpp
 	@echo compiling $@ 
 	@g++ ${CFLAGS} -c $< -o $@
 
-Cercle.o: Cercle.cpp Cercle.hpp Ellipse.hpp
-	@echo compiling $@ 
-	@g++ ${CFLAGS} -c $< -o $@
-
-Ellipse.o: Ellipse.cpp Ellipse.hpp
+ioPPM.o: ioPPM.cpp ioPPM.hpp ImageRGBu8.hpp
 	@echo compiling $@ 
 	@g++ ${CFLAGS} -c $< -o $@
 

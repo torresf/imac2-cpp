@@ -1,7 +1,9 @@
 #ifndef __RECTANGLE__HPP
 #define __RECTANGLE__HPP
 
-class Rectangle {
+#include "Figure.hpp"
+
+class Rectangle : public Figure {
 	protected:
 		double _largeur;
 		double _hauteur;
@@ -19,7 +21,7 @@ class Rectangle {
 		
 		inline double surface() const { return _largeur * _hauteur; };
 
-		std::string quiSuisJe() const;
+		void quiSuisJe() const;
 };
 
 #endif
