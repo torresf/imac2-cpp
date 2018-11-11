@@ -1,6 +1,6 @@
 #include <iostream>
 
-int	maxValue(int *tab, int taille) {
+int maxValue(int *tab, int taille) {
 	int max = 0;
 
 	for (int i = 0; i < taille; ++i)
