@@ -9,7 +9,7 @@ class Filters
 	private:
 		unsigned int _size;
 		unsigned int _nbFilters;
-		Filter** _filters;
+		Filter* *_filters;
 
 	public:
 		Filters(); // Constructeur
