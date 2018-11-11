@@ -3,7 +3,7 @@ LDFLAGS =
 CFLAGS  = -Wall -std=c++11
 all: ${EXE}
 
-${EXE}: main.o ImageRGBu8.o ioPPM.o Filters.o Filter.o Threshold.o RemoveChannel.o Mean.o
+${EXE}: main.o ImageRGBu8.o ioPPM.o Filters.o Filter.o Threshold.o RemoveChannel.o Mean.o Sobel.o
 	@echo linking ${EXE} 
 	@g++ ${LDFLAGS} -o ${EXE} $^
 
@@ -32,6 +32,10 @@ RemoveChannel.o: RemoveChannel.cpp RemoveChannel.hpp Filter.hpp
 	@g++ ${CFLAGS} -c $< -o $@
 
 Mean.o: Mean.cpp Mean.hpp Filter.hpp
+	@echo compiling $@ 
+	@g++ ${CFLAGS} -c $< -o $@
+
+Sobel.o: Sobel.cpp Sobel.hpp Filter.hpp
 	@echo compiling $@ 
 	@g++ ${CFLAGS} -c $< -o $@
 

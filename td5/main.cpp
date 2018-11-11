@@ -5,6 +5,7 @@
 #include "Threshold.hpp"
 #include "RemoveChannel.hpp"
 #include "Mean.hpp"
+#include "Sobel.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -57,7 +58,8 @@ int main(int argc, char const *argv[])
 	*/
 
 
-	/* ------- EX5 ------- */
+	/* ------- EX5 - Mean Filter ------- */
+	/*
 	// load image
 	ImageRGBu8 image4;
 	readPPM(argv[1], image4);
@@ -68,6 +70,20 @@ int main(int argc, char const *argv[])
 	filters.applyFilters(image4);
 	// save image
 	writePPM("test_ex5.ppm", image4);
+	*/
+
+
+	/* ------- EX5 - Sobel Filter ------- */
+	// load image
+	ImageRGBu8 image5;
+	readPPM(argv[1], image5);
+	// apply filters
+	Filters filters(1);
+	Sobel s;
+	filters.addFilter(s);
+	filters.applyFilters(image5);
+	// save image
+	writePPM("test_ex5bis.ppm", image5);
 
 	return 0;
 }
