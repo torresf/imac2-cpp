@@ -2,8 +2,9 @@
 #define __THRESHOLD__HPP
 
 #include "ImageRGBu8.hpp"
+#include "Filter.hpp"
 
-class Threshold
+class Threshold : public Filter
 {
 	private:
 		unsigned char _threshold;

@@ -2,16 +2,22 @@
 #define __FILTERS__HPP
 
 #include "ImageRGBu8.hpp"
+#include "Filter.hpp"
 
 class Filters
 {
 	private:
-		unsigned int _filters;
+		unsigned int _size;
 		unsigned int _nbFilters;
-		Filter* _filters;
+		Filter** _filters;
+
 	public:
-		Filters();
-		~Filters();
+		Filters(); // Constructeur
+		Filters(const int n); // Constructeur
+		~Filters(); // Destructeur
+
+		void addFilter(Filter &filter); // Ajoute un filtre
+		void applyFilters(ImageRGBu8 &image); // Applique le filtre
 };
 
 #endif

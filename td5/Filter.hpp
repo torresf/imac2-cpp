@@ -7,7 +7,7 @@ class Filter
 {
 	public:
 		Filter();
-		~Filter();
+		virtual ~Filter();
 		virtual void applyFilter(ImageRGBu8 &ImageRGBU8) = 0;
 };
 

@@ -1,7 +1,8 @@
 #include "Threshold.hpp"
+#include <iostream>
 
 // Constructeurs
-Threshold::Threshold() {}
+Threshold::Threshold():_threshold(175) {}
 Threshold::Threshold(const int t):_threshold(t) {}
 
 // Destructeur
@@ -9,6 +10,7 @@ Threshold::~Threshold() {}
 
 // Méthodes 
 void Threshold::applyFilter(ImageRGBu8 &ImageRGBU8) {
+	std::cout << "applyFilter Threshold" << std::endl;
 	float moy;
 	for (unsigned int i = 0; i < ImageRGBU8.width() * ImageRGBU8.height() * 3; i+=3)
 	{
