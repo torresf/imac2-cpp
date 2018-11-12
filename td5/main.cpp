@@ -59,18 +59,16 @@ int main(int argc, char const *argv[])
 
 
 	/* ------- EX5 - Mean Filter ------- */
-	/*
-	// load image
-	ImageRGBu8 image4;
-	readPPM(argv[1], image4);
-	// apply filters
-	Filters filters(2);
-	Mean m1(2);
-	filters.addFilter(m1);
-	filters.applyFilters(image4);
-	// save image
-	writePPM("test_ex5.ppm", image4);
-	*/
+	// // load image
+	// ImageRGBu8 image4;
+	// readPPM(argv[1], image4);
+	// // apply filters
+	// Filters filters(2);
+	// Mean m1(2);
+	// filters.addFilter(m1);
+	// filters.applyFilters(image4);
+	// // save image
+	// writePPM("test_ex5.ppm", image4);
 
 
 	/* ------- EX5 - Sobel Filter ------- */
