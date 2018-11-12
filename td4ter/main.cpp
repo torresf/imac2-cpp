@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
 	listFig.push_back(new Cercle());
 
 	std::for_each(listFig.begin(), listFig.end(),
-		[](Figure * figure)
+		[](Figure *figure)
 		{
 			afficher(figure);
 			std::cout << figure->surface() << std::endl;
