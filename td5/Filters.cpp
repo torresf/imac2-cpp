@@ -3,11 +3,11 @@
 #include <iostream>
 
 // Constructeurs
-// Filters::Filters() {
-// 	_size = 0;
-// 	_nbFilters = 0;
-// 	_filters = new Filter*[0];
-// }
+Filters::Filters() {
+	_size = 0;
+	_nbFilters = 0;
+	_filters = new Filter*[0];
+}
 
 
 Filters::Filters(const int n) {
@@ -22,7 +22,7 @@ Filters::~Filters() {
 }
 
 
-// Méthodes sur les filtres
+/* Méthodes sur les filtres */
 
 // Ajout d'un filtre : On ajoute le nouveau filtre au tableau _filters, puis on incrémente _nbFilters
 void Filters::addFilter(Filter &filter) {
@@ -30,6 +30,7 @@ void Filters::addFilter(Filter &filter) {
 	_nbFilters++;
 }
 
+// Application de tous les filtres sur l'image
 void Filters::applyFilters(ImageRGBu8 &image) {
 	for (unsigned int i = 0; i < _nbFilters; ++i)
 	{	

@@ -44,7 +44,7 @@ void ImageRGBU8::drawCircle(const unsigned char r, const unsigned char g, const 
     int centerX = _width / 2;
     int centerY = _height / 2;
 
-    // fill the circle
+    // Fill the circle
     for(int x=0; x<(int)_width; ++x)
         for(int y=0; y<(int)_height; ++y)
             if( (x-centerX)*(x-centerX) + (y-centerY)*(y-centerY) < squaredRadius ){

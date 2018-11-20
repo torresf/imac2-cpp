@@ -8,7 +8,7 @@ class Filter
 	public:
 		Filter();
 		virtual ~Filter();
-		virtual void applyFilter(ImageRGBu8 &ImageRGBU8) = 0;
+		virtual void applyFilter(ImageRGBu8 &ImageRGBU8) = 0; // Méthode virtuelle pure
 };
 
 #endif

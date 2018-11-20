@@ -17,7 +17,7 @@ class Filters
 		~Filters(); // Destructeur
 
 		void addFilter(Filter &filter); // Ajoute un filtre
-		void applyFilters(ImageRGBu8 &image); // Applique le filtre
+		void applyFilters(ImageRGBu8 &image); // Applique les filtres
 };
 
 #endif

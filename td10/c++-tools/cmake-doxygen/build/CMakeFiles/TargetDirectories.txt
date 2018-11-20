@@ -1,0 +1,6 @@
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/cmake-doxygen/build/CMakeFiles/rebuild_cache.dir
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/cmake-doxygen/build/CMakeFiles/vectorD.dir
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/cmake-doxygen/build/CMakeFiles/edit_cache.dir
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/cmake-doxygen/build/doc/CMakeFiles/rebuild_cache.dir
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/cmake-doxygen/build/doc/CMakeFiles/html.dir
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/cmake-doxygen/build/doc/CMakeFiles/edit_cache.dir

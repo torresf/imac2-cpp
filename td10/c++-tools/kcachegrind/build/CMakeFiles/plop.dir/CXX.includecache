@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/torresf/Documents/POO/imac2-cpp/td10/c++-tools/kcachegrind/src/main.cpp
+iostream
+-
+vector
+-
+string
+-
+cstdlib
+-
+

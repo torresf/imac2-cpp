@@ -3,22 +3,14 @@
 #include <algorithm>
 #include <deque>
 #include <list>
+#include <map>
+#include "Majuscule.hpp"
+#include "AjoutSiPair.hpp"
 
-void displayVector(const std::vector<int> &v) {
-	for (unsigned int i = 0; i < v.size(); ++i)
-		std::cout << v[i] << " ";
-	std::cout << std::endl;
-}
-
-void displayDeque(const std::deque<int> &d) {
-	for (unsigned int i = 0; i < d.size(); ++i)
-		std::cout << d[i] << " ";
-	std::cout << std::endl;
-}
-
-void displayList(const std::list<std::string> &l) {
-	for (auto item : l)
-	    std::cout << item << " ";
+template <class T>
+void display(T deb, T fin) {
+	for (T i = deb; i != fin; i++)
+		std::cout << *i << " ";
 	std::cout << std::endl;
 }
 
@@ -67,9 +59,9 @@ int main(int argc, char const *argv[])
 	std::vector<int> v;
 	for (unsigned int i = 0; i < 30; ++i)
 		v.push_back(rand() % 21);
-	displayVector(v);
+	display(v.begin(), v.end());
 	std::sort(v.begin(), v.end());
-	displayVector(v);
+	display(v.begin(), v.end());
 
 	int countSeven = std::count(v.begin(), v.end(), 7);
 	std::cout << "Nombre de 7 dans v : " << countSeven << std::endl;
@@ -82,32 +74,79 @@ int main(int argc, char const *argv[])
 	for (unsigned int i = 0; i < d.size(); ++i)
 		d[i] = rand();
 
-	displayDeque(d);
+	display(d.begin(), d.end());
 
 	for (unsigned int i = 0; i < d.size(); ++i) {
 		d.push_front(rand());
 		d.pop_back();
-		displayDeque(d);
+		display(d.begin(), d.end());
 	}
 	*/
 
 
 	/* ----- EXO 5 ----- */ 
+	/* 
 	std::list<std::string> l_philo {"Platon", "Aristote", "Descartes", "Kant"};
 	std::list<std::string> l_math {"Gauss", "Laplace", "Poincaré", "Descartes"};
 	l_philo.sort();
 	l_math.sort();
 
-	displayList(l_philo);
-	displayList(l_math);
+	display(l_philo.begin(), l_philo.end());
+	display(l_math.begin(), l_math.end());
 
 	std::list<std::string> l_all;
-	l_philo.merge(l_math);
-	
-	l_all = l_philo;
+	std::merge(l_philo.begin(), l_philo.end(), l_math.begin(), l_math.end(), std::back_inserter(l_all));
+
 	l_all.unique();
 	l_all.reverse();
 
-	displayList(l_all);
+	display(l_all.begin(), l_all.end());
+	*/
+
+
+	/* ----- EXO 6 ----- */ 
+	/*
+	std::map<std::string, int> m;
+	m.insert(std::make_pair("Bobby", 22));
+	m.insert(std::make_pair("Flo", 21));
+	m.insert(std::make_pair("Tom", 20));
+	// m.insert(std::make_pair("Marie", 32));
+
+	std::map<std::string, int>::iterator it = m.begin();
+	while(it != m.end())
+	{
+		std::cout << it->first << " a " << it->second << " ans." << std::endl;
+		it++;
+	}
+
+	it = m.find("Marie");
+	if (it != m.end())
+		std::cout << it->first << " a " << it->second << " ans." << std::endl;
+	else
+		std::cerr << "L'âge de 'Marie' n'existe pas." << std::endl;
+	*/
+
+
+	/* ----- EXO 7 ----- */
+	/*
+	std::vector<char> v{'a', 'b', 'c'};
+	display(v.begin(), v.end());
+	Majuscule toMaj;
+	std::vector<char>::iterator it;
+	for (it = v.begin(); it != v.end(); ++it)
+		*it = toMaj(*it);
+	display(v.begin(), v.end());
+	*/
+
+
+	/* ----- EXO 8 ----- */
+	std::list<int> l {1, 2, 3, 4, 5, 6};
+	display(l.begin(), l.end());
+	AjoutSiPair ajout;
+	std::list<int>::iterator it;
+	for (it = l.begin(); it != l.end(); ++it)
+		*it = ajout(*it);
+	display(l.begin(), l.end());
+
 	return 0;
 }
