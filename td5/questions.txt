@@ -2,11 +2,11 @@
 
 2. protected : Seules les classes filles ont accès à la méthode.
 
-3. ?
+3. Le constructeur de la classe mère peut être appellé comme ceci NOM_DE_LA_CLASSE_MERE::NOM_DU_CONSTRUCTEUR_PARENT
 
-4. virtual : Défini une méthode virtuelle
+4. virtual : Défini une méthode virtuelle pour utiliser le polymorphisme
 
-5. Une méthode virtuelle pure est une méthode qui n'a pas d'implémentations dans la classe mère mais seulement dans les classes filles.
+5. Une méthode virtuelle pure est une méthode qui n'est pas défini dans la classe mère mais seulement dans les classes filles (obligatoirement dans toutes les classes filles).
 
-6. Une classe est abstraite si elle possède une méthode virtuelle pure OU que des virtuelles pures ?
+6. Une classe est abstraite si elle possède au moins une méthode virtuelle pure.
 
