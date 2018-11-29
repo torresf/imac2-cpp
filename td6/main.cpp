@@ -20,18 +20,10 @@ int main(int argc, char const *argv[])
 	}
 	catch (Error &e) {
 		std::cerr << e.what() << std::endl;
-		/*
-		std::cerr << "Exception lancée : " << std::endl;
-		std::cerr << "	Niveau : " << e.getNiveau() << std::endl;
-		std::cerr << "	Code : " << e.getCode() << std::endl;
-		std::cerr << "	File : " << e.getFile() << std::endl;
-		std::cerr << "	Line : " << e.getLine() << std::endl;
-		std::cerr << "	Exception lancée : " << e.what() <<  std::endl;
-		*/
 	}
 
 	std::cout << "a/5 = " << a/5 << std::endl;
 	std::cout << "Terminé ! " << std::endl;
-	
+
 	return 0;
 }

@@ -15,19 +15,19 @@ class Error : public std::exception
 		Error(const int n, const int c, std::string f, int l, const char *m);
 		virtual ~Error();
 		
-		inline int getNiveau() {
+		inline int getNiveau() const {
 			return _niveau;
 		}
 
-		inline int getCode() {
+		inline int getCode() const {
 			return _code;
 		}
 
-		inline std::string getFile() {
+		inline std::string getFile() const {
 			return _file;
 		}
 
-		inline int getLine() {
+		inline int getLine() const {
 			return _line;
 		}
 
