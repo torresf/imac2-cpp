@@ -4,6 +4,7 @@
 #include <deque>
 #include <list>
 #include <map>
+#include <functional>
 #include "Majuscule.hpp"
 #include "AjoutSiPair.hpp"
 
@@ -128,25 +129,52 @@ int main(int argc, char const *argv[])
 
 
 	/* ----- EXO 7 ----- */
-	/*
+	
 	std::vector<char> v{'a', 'b', 'c'};
 	display(v.begin(), v.end());
-	Majuscule toMaj;
 	std::vector<char>::iterator it;
-	for (it = v.begin(); it != v.end(); ++it)
-		*it = toMaj(*it);
-	display(v.begin(), v.end());
-	*/
 
+	// Majuscule toMaj;
+	// for (it = v.begin(); it != v.end(); ++it)
+	// 	*it = toMaj(*it);
+
+	std::function<char(char&)> foncteur;
+	foncteur = [](char &l) {
+		return toupper(l);
+	};
+
+	std::for_each(v.begin(), v.end(), foncteur);
+	for (it = v.begin(); it != v.end(); ++it)
+		*it = foncteur(*it);
+
+	display(v.begin(), v.end());
+	
 
 	/* ----- EXO 8 ----- */
-	std::list<int> l {1, 2, 3, 4, 5, 6};
-	display(l.begin(), l.end());
-	AjoutSiPair ajout;
-	std::list<int>::iterator it;
-	for (it = l.begin(); it != l.end(); ++it)
-		*it = ajout(*it);
-	display(l.begin(), l.end());
+
+	// std::list<int> l {1, 2, 3, 4, 5, 6};
+	// display(l.begin(), l.end());
+	// std::list<int>::iterator it;
+
+	// /* Version Foncteur */
+	// AjoutSiPair ajout;
+	// for (it = l.begin(); it != l.end(); ++it)
+	// 	*it = ajout(*it);
+
+	// /* Affichage du résultat */
+	// display(l.begin(), l.end());
+
+	// /* Version Fonction Lambda */
+	// std::function<int(const int)> foncteur;
+	// foncteur = [](const int n) {
+	// 	return (n%2 == 0) ? n+10 : n;
+	// };
+	// for (it = l.begin(); it != l.end(); ++it)
+	// 	*it = foncteur(*it);
+
+	// /* Affichage du résultat */
+	// display(l.begin(), l.end());
+
 
 	return 0;
 }
