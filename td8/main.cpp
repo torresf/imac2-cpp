@@ -121,16 +121,16 @@ int main(int argc, char const *argv[])
 
 
 	try {
-		std::cout << "getFirst()" << std::endl;
-		std::cout << t.getFirst() << std::endl;
+		std::cout << "first()" << std::endl;
+		std::cout << t.first() << std::endl;
 	}
 	catch (const Error &e) {
 		std::cerr << e.what() <<  std::endl;
 	}
 
 	try {
-		std::cout << "getLast()" << std::endl;
-		std::cout << t.getLast() << std::endl;
+		std::cout << "last()" << std::endl;
+		std::cout << t.last() << std::endl;
 	}
 	catch (const Error &e) {
 		std::cerr << e.what() <<  std::endl;

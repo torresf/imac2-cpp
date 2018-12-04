@@ -21,7 +21,7 @@ class Point3D
 		{}
 
 		template<typename Type2>
-		Point3D(const Point3D<Type2> &p)
+		Point3D<Type>(const Point3D<Type2> &p)
 			:m_x(p.getX()),m_y(p.getY()),m_z(p.getZ()) 
 		{}
 
@@ -65,6 +65,31 @@ class Point3D
 
 		inline Type getZ() const {
 			return m_z;
+		}
+
+		const Type& operator[](const size_t &i) const {
+			switch (i) {
+				case 0: return m_x;
+				case 1: return m_y;
+				case 2: return m_z;
+				default: break; // Exception
+			}
+		}
+
+		Type& operator[](const size_t &i) {
+			switch (i) {
+				case 0:
+					return m_x;
+					break;
+				case 1: 
+					return m_y;
+					break;
+				case 2:
+					return m_z;
+					break;
+				default: 
+					break;
+			}
 		}
 };
 
